@@ -1,5 +1,6 @@
 package com.dimitar.recipes.recipes.entities;
 
+import com.dimitar.recipes.recipes.entities.enums.Difficulty;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -24,8 +25,8 @@ public class Recipe {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients;
 
-    //@todo: add
-    //private Difficulty difficulty;
+    @Enumerated(value = EnumType.STRING) //ordinal simply seems bad idea, what if you add more enums in the middle!?!
+    private Difficulty difficulty;
 
     @Lob
     private Byte[] image;
