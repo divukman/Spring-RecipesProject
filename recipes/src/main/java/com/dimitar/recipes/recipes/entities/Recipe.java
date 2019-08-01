@@ -34,4 +34,12 @@ public class Recipe {
     //@OneToOne(cascade = CascadeType.ALL, mappedBy = "recipe")
     @OneToOne(cascade = CascadeType.ALL) // keeping same as in course, 2 FKs will be present, one in each table
     private Notes notes;
+
+    @ManyToMany
+    @JoinTable(
+            name="recipe_category",
+            joinColumns = @JoinColumn(name="recipe_id"),
+            inverseJoinColumns = @JoinColumn(name="category_id")
+    )
+    private Set<Category> categories;
 }
