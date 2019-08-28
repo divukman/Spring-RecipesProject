@@ -1,21 +1,10 @@
 package com.dimitar.recipes.recipes.services;
 
 import com.dimitar.recipes.recipes.entities.Recipe;
-import com.dimitar.recipes.recipes.repositories.RecipeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-@Service
-public class RecipeService {
+import java.util.Set;
 
-    private final RecipeRepository recipeRepository;
-
-    @Autowired
-    public RecipeService(final RecipeRepository recipeRepository) {
-        this.recipeRepository = recipeRepository;
-    }
-
-    public Recipe saveRecipe(final Recipe recipe) {
-        return recipeRepository.save(recipe);
-    }
+public interface RecipeService {
+    Recipe save(Recipe recipe);
+    Set<Recipe> findAll();
 }
