@@ -31,11 +31,11 @@ public class IndexController {
     @GetMapping({"", "/", "/index"})
     public String getIndexPage(Model model) {
 
-        Optional<Category> categoryOptional = categoryRepository.findByDescription("American");
-        Optional<UnitOfMeasure> unitOfMeasureOptional = unitOfMeasureRepository.findByDescription("Teaspoon");
-
-        System.out.println("Cat id is:" + categoryOptional.get().getId());
-        System.out.println("UOM id is: " + unitOfMeasureOptional.get().getId());
+//        Optional<Category> categoryOptional = categoryRepository.findByDescription("American");
+//        Optional<UnitOfMeasure> unitOfMeasureOptional = unitOfMeasureRepository.findByDescription("Teaspoon");
+//
+//        System.out.println("Cat id is:" + categoryOptional.get().getId());
+//        System.out.println("UOM id is: " + unitOfMeasureOptional.get().getId());
 
         model.addAttribute("recipes", recipeService.findAll());
 
