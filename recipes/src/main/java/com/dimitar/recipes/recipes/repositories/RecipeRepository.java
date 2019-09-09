@@ -10,4 +10,5 @@ import java.util.Optional;
 @Repository
 public interface RecipeRepository extends CrudRepository<Recipe, Long> {
     Optional<Category> findByDescription(String description);
+    Optional<Recipe> findById(Long id);
 }

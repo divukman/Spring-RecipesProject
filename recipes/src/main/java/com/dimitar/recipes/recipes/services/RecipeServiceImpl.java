@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -29,5 +30,11 @@ public class RecipeServiceImpl implements RecipeService{
         final HashSet<Recipe> set = new HashSet<>();
         recipeRepository.findAll().forEach(set::add);
         return set;
+    }
+
+    @Override
+    public Optional<Recipe> findById(Long id) {
+        Optional<Recipe> recipe =  recipeRepository.findById(id);
+        return recipe;
     }
 }

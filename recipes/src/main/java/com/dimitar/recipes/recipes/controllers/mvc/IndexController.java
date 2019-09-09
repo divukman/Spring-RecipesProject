@@ -38,8 +38,6 @@ public class IndexController {
 //        System.out.println("UOM id is: " + unitOfMeasureOptional.get().getId());
 
         model.addAttribute("recipes", recipeService.findAll());
-
-
         return "index";
     }
 
